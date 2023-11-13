@@ -61,7 +61,7 @@ const Doctors = () => {
       dataIndex: "status",
     },
     {
-      title: "phone",
+      title: "Phone",
       dataIndex: "phone",
     },
     {

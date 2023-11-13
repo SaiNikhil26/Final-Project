@@ -1,10 +1,11 @@
 import React from "react";
-import "../styles/RegiserStyles.css";
+import "../styles/Loginstyles.css";
 import { Form, Input, message } from "antd";
 import { useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import logo from "../image/logo.png"
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,26 +31,23 @@ const Login = () => {
     }
   };
   return (
-    <div className="form-container ">
-      <Form
-        layout="vertical"
-        onFinish={onfinishHandler}
-        className="register-form"
-      >
-        <h3 className="text-center">Login From</h3>
-
-        <Form.Item label="Email" name="email">
-          <Input type="email" required />
+    <div className='form-container'>
+      <Form layput="vertical" onFinish={onfinishHandler} className='register-form'>
+        <img src={logo} alt='logo'></img>
+        <br/>
+      <span class="material-symbols-outlined">account_circle</span> 
+      <h4>Sign in</h4>       
+<Form.Item name="email">
+          <Input type="email" required placeholder='Email' className='input-box' autoComplete='off'/>
         </Form.Item>
-        <Form.Item label="Password" name="password">
-          <Input type="password" required />
+        <Form.Item name="password">
+          <Input type="password" required placeholder='Password' className='input-box' autoComplete='off'/>
         </Form.Item>
-        <Link to="/register" className="m-2">
-          Not a user Register here
-        </Link>
-        <button className="btn btn-primary" type="submit">
-          Login
-        </button>
+        <button className='btn btn-primary' type="submit">Sign in</button>
+        <p className='redirect'>Don't have a account</p>
+        <p className='redirect-button'>
+          <Link to="/register" className='redirect-button'>Sign up</Link>
+        </p>
       </Form>
     </div>
   );

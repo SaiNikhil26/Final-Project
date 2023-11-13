@@ -5,6 +5,8 @@ import { adminMenu, userMenu } from "./../Data/data";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { Badge, message } from "antd";
+import logo from "../image/logo.png"
+
 const Layout = ({ children }) => {
   const { user } = useSelector((state) => state.user);
   const location = useLocation();
@@ -49,7 +51,7 @@ const Layout = ({ children }) => {
         <div className="layout">
           <div className="sidebar">
             <div className="logo">
-              <h6 className="text-light">DOC APP</h6>
+              <img src={logo} alt="logo"></img>
               <hr />
             </div>
             <div className="menu">
@@ -72,6 +74,9 @@ const Layout = ({ children }) => {
           </div>
           <div className="content">
             <div className="header">
+              <div>
+                <p className="motto">Empowering Healing, Enhancing Care: Your Health, Our Priority</p>
+              </div>
               <div className="header-content" style={{ cursor: "pointer" }}>
                 <Badge
                   count={user && user.notifcation.length}
@@ -82,7 +87,10 @@ const Layout = ({ children }) => {
                   <i class="fa-solid fa-bell"></i>
                 </Badge>
 
-                <Link to="/profile">{user?.name}</Link>
+                <div className="profile-icon">
+                <Link to="/profile" className="pr-icon"><i class="fa-solid fa-user"></i></Link>
+                
+                </div>
               </div>
             </div>
             <div className="body">{children}</div>

@@ -3,6 +3,7 @@ import axios from "axios";
 import Layout from "./../components/Layout";
 import { Row } from "antd";
 import DoctorList from "../components/DoctorList";
+import heroimg from "../image/hero-img03.png";
 const HomePage = () => {
   const [doctors, setDoctors] = useState([]);
   // login user data
@@ -30,10 +31,21 @@ const HomePage = () => {
   }, []);
   return (
     <Layout>
-      <h1 className="text-center">Home Page</h1>
+      <section className="intro">
+        <h3 className="intro-heading">We help patients live a healthy, longer life</h3>
+        <img src={heroimg} alt="heroimg" className="heroimg"></img>
+        
+      </section>
+      <section>
+        <h2>Our Doctors</h2>
+        <p>
+          World-class care for everyone. Our health System offers unmatched,
+          expert health care.
+        </p>
       <Row>
         {doctors && doctors.map((doctor) => <DoctorList doctor={doctor} />)}
       </Row>
+      </section>
     </Layout>
   );
 };

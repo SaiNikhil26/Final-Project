@@ -1,7 +1,10 @@
+/* Default styles */
+
 .main {
   padding: 10px;
   height: 100vh;
 }
+
 .layout {
   display: flex;
 }
@@ -10,10 +13,11 @@
   min-height: 100%;
   width: 300px;
   border-radius: 5px;
-  background-color: rgb(51, 1, 1);
-  box-shadow: 0 0 2px gray;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
   margin-right: 20px;
-  color: white;
+  color: #0464fc;
 }
 
 .content {
@@ -24,60 +28,139 @@
 .header {
   height: 10vh;
   margin-bottom: 20px;
-  box-shadow: 0 0 2px gray;
-  background-color: white;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
 }
+
 .body {
   height: 85vh;
   margin-bottom: 20px;
-  box-shadow: 0 0 2px gray;
-  background-color: white;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
 }
+
 .logo h6 {
   font-size: 1.5rem;
   text-align: center;
   margin: 20px 0px;
 }
+
 .menu {
   margin-top: 50px;
 }
+
 .menu-item {
   margin-top: 30px;
 }
+
 .menu-item a {
-  color: white;
+  color: #0464fc;
   text-decoration: none;
   font-size: 1.2rem;
 }
+
 .menu-item i {
   font-size: 1.2rem;
   margin: 0 15px;
 }
+
 .active {
   background-color: white;
   padding: 10px;
 }
+
 .active a,
 .active i {
-  color: rgb(51, 1, 1);
+  color: #104058;
 }
 
 .header-content {
-  display: flex;
-  align-items: center;
-  height: 50px;
-  justify-content: flex-end;
-  margin: 0 15px;
+  position: relative;
+  left: 90%;
+  bottom: 20px;
+}
+
+.profile-icon {
+  display: inline;
+  margin-left: 40px;
+  color: black;
+}
+
+.profile-icon Link {
+  margin-left: 40px;
+  color: black;
+}
+
+.pr-icon {
+  color: black;
 }
 
 .header-content i {
-  margin-right: 20px;
   font-size: 1.2rem;
 }
+
 .header-content a {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 10px;
   color: blue;
-  margin: 0 10px;
   text-transform: uppercase;
+}
+
+img {
+  position: relative;
+  top: 20px;
+}
+
+.motto {
+  text-align: center;
+  font-size: large;
+  margin-top: 5px;
+  position: relative;
+  top: 25px;
+}
+
+.user{
+  position: relative;
+  left: 45px;
+  color: #0464fc;
+}
+
+.intro{
+  position: relative;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  left: 20px;
+  align-items: center;
+}
+
+.intro-heading{
+  color: #104058;
+  font-weight: bold;
+  text-align: left;
+}
+
+.heroimg{
+  position: relative;
+  left:300px;
+  height: 200px;
+  width: 200px;
+}
+
+/* Responsive styles */
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }
